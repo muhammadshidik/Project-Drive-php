@@ -41,8 +41,8 @@
                 <div class="collapse" id="dashboard">
                   <ul class="nav nav-collapse">
                     <li>
-                      <a href="../demo1/index.html">
-                        <span class="sub-item">Dashboard 1</span>
+                      <a href="../../content/dashboard.php">
+                        <span class="sub-item">Dashboard</span>
                       </a>
                     </li>
                   </ul>
@@ -52,24 +52,24 @@
                 <span class="sidebar-mini-icon">
                   <i class="fa fa-ellipsis-h"></i>
                 </span>
-                <h4 class="text-section">Components</h4>
+                <h4 class="text-section">Master Data</h4>
               </li>
               <li class="nav-item">
                 <a data-bs-toggle="collapse" href="#base">
                   <i class="fas fa-layer-group"></i>
-                  <p>Base</p>
+                  <p>Admin</p>
                   <span class="caret"></span>
                 </a>
                 <div class="collapse" id="base">
                   <ul class="nav nav-collapse">
                     <li>
-                      <a href="components/avatars.html">
-                        <span class="sub-item">Avatars</span>
+                      <a href="?page=user">
+                        <span class="sub-item">User</span>
                       </a>
                     </li>
                     <li>
                       <a href="components/buttons.html">
-                        <span class="sub-item">Buttons</span>
+                        <span class="sub-item">Button</span>
                       </a>
                     </li>
                     <li>
@@ -83,7 +83,7 @@
                       </a>
                     </li>
                     <li>
-                      <a href="components/notifications.html">
+                      <a href="/project-drive/template/components/notifications.html">
                         <span class="sub-item">Notifications</span>
                       </a>
                     </li>

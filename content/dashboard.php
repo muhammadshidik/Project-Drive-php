@@ -70,6 +70,7 @@ function tanggal_indonesia($tanggal = null) {
         <table class="table table-hover table-bordered align-middle mb-0">
           <thead class="table-light">
             <tr>
+              <th>No.</th>
               <th>Nama File</th>
               <th>Tanggal Upload</th>
               <th>Ukuran</th>
@@ -78,6 +79,7 @@ function tanggal_indonesia($tanggal = null) {
           </thead>
           <tbody>
             <tr>
+              <td>1</td>
               <td>document.pdf</td>
               <td>04 Juli 2025 14:30</td>
               <td>500 KB</td>
@@ -90,6 +92,7 @@ function tanggal_indonesia($tanggal = null) {
               </td>
             </tr>
             <tr>
+              <td>2</td>
               <td>photo.jpg</td>
               <td>03 Juli 2025 10:15</td>
               <td>1.2 MB</td>
@@ -102,6 +105,7 @@ function tanggal_indonesia($tanggal = null) {
               </td>
             </tr>
             <tr>
+              <td>3</td>
               <td>resume.docx</td>
               <td>01 Juli 2025 09:00</td>
               <td>300 KB</td>

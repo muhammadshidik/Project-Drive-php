@@ -3,7 +3,7 @@
 $hostname = "localhost";
 $hostusername = "root";
 $hostpassword = "";
-$hostdatabase = "lms_angkatan_2";
+$hostdatabase = "db_drive";
 $config = mysqli_connect($hostname, $hostusername, $hostpassword, $hostdatabase);
 if (!$config) {
     echo "Koneksi gagal";
