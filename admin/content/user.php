@@ -1,7 +1,7 @@
 <?php
-include __DIR__ . '/../config/koneksi.php';
+include 'admin/controller/koneksi.php';
 
-$query = mysqli_query($config, "SELECT * FROM users ORDER BY id DESC");
+$query = mysqli_query($config, "SELECT * FROM user ORDER BY id DESC");
 
 
 // Cek jika query gagal
@@ -29,15 +29,16 @@ $rows = mysqli_fetch_all($query, MYSQLI_ASSOC);
                             </tr>
                         </thead>
                         <tbody>
-                            <?php $i = 1; foreach ($rows as $data): ?>
+                            <?php $i = 1;
+                            foreach ($rows as $data): ?>
                                 <tr>
                                     <td><?php echo $i++; ?></td>
-                                    <td><?php echo htmlspecialchars($data['name']); ?></td>
+                                    <td><?php echo htmlspecialchars($data['nama']); ?></td>
                                     <td><?php echo htmlspecialchars($data['email']); ?></td>
                                     <td>
                                         <a href="?page=tambah-user&edit=<?php echo $data['id']; ?>" class="btn btn-primary btn-sm">Edit</a>
                                         <a onclick="return confirm('Are you sure you want to delete this user?')"
-                                           href="?page=tambah-user&delete=<?php echo $data['id']; ?>" class="btn btn-danger btn-sm">Delete</a>
+                                            href="?page=tambah-user&delete=<?php echo $data['id']; ?>" class="btn btn-danger btn-sm">Delete</a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
@@ -48,11 +49,11 @@ $rows = mysqli_fetch_all($query, MYSQLI_ASSOC);
                                 </tr>
                             <?php endif; ?>
                         </tbody>
-                        
+
                     </table>
                     <div class="mb-3 d-flex justify-content-between">
-             <a href="?page=tambah-user" class="btn btn-primary btn-sm">Add User</a>
-         </div>
+                        <a href="?page=tambah-user" class="btn btn-primary btn-sm">Add User</a>
+                    </div>
                 </div>
 
             </div>

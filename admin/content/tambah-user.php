@@ -1,8 +1,8 @@
 <?php
-include __DIR__ . '/../config/koneksi.php';
+include 'admin/controller/koneksi.php';
 if (isset($_GET['delete'])) {
     $id_user = isset($_GET['delete']) ? $_GET['delete'] : '';
-  $queryDelete = mysqli_query($config, "DELETE FROM users WHERE id='$id_user'");
+    $queryDelete = mysqli_query($config, "DELETE FROM user WHERE id='$id_user'");
 
 
     if ($queryDelete) {
@@ -12,22 +12,22 @@ if (isset($_GET['delete'])) {
     }
 }
 $id_user = isset($_GET['edit']) ? $_GET['edit'] : '';
-$queryEdit = mysqli_query($config, "SELECT * FROM users WHERE id='$id_user'");
+$queryEdit = mysqli_query($config, "SELECT * FROM user WHERE id='$id_user'");
 $rowEdit = mysqli_fetch_assoc($queryEdit);
 // print_r($id_user);
-if (isset($_POST['name'])) {
+if (isset($_POST['nama'])) {
     //ada tidak parameter bernama edit, kalo ada jalankan perintah edit/update, kalo tidak ada tambah data baru/insert
-    $name = $_POST['name'];
+    $nama = $_POST['nama'];
     $email = $_POST['email'];
     $password = isset($_POST['password']) ? sha1($_POST['password']) : $rowEdit['password'];
 
 
 
     if (!isset($_GET['edit'])) {
-        $insert = mysqli_query($config, "INSERT INTO users (name, email, password) VALUES('$name','$email','$password')");
+        $insert = mysqli_query($config, "INSERT INTO user (nama, email, password) VALUES('$nama','$email','$password')");
         header("location:?page=user&tambah=berhasil");
     } else {
-        $Update = mysqli_query($config, "UPDATE users SET name='$name', email='$email', password='$password' WHERE id='$id_user'");
+        $Update = mysqli_query($config, "UPDATE users SET nama='$nama', email='$email', password='$password' WHERE id='$id_user'");
         header("location:?page=user&ubah=berhasil");
     }
 }
@@ -42,7 +42,7 @@ if (isset($_POST['name'])) {
                 <form action="" method="post">
                     <div class="mb-3">
                         <label for="">Full Name</label>
-                        <input value="<?php echo isset($rowEdit['name']) ? $rowEdit['name'] : '' ?>" type="text" class="form-control" name="name" placeholder="Enter Your Name" required>
+                        <input value="<?php echo isset($rowEdit['nama']) ? $rowEdit['nama'] : '' ?>" type="text" class="form-control" name="name" placeholder="Enter Your Name" required>
                     </div>
                     <div class="mb-3">
                         <label for="">Email</label>
