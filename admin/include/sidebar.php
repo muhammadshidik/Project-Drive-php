@@ -27,7 +27,7 @@
         <div class="sidebar-wrapper scrollbar scrollbar-inner">
           <div class="sidebar-content">
             <ul class="nav nav-secondary">
-              <li class="nav-item">
+              <li class=" nav-item active submenu ">
                 <a
                   data-bs-toggle="collapse"
                   href="#dashboard"
@@ -54,7 +54,7 @@
                 </span>
                 <h4 class="text-section">Master Data</h4>
               </li>
-              <li class="nav-item">
+              <li class=" nav-item   ">
                 <a data-bs-toggle="collapse" href="#base">
                   <i class="fas fa-layer-group"></i>
                   <p>Admin</p>
@@ -110,44 +110,8 @@
                   </ul>
                 </div>
               </li>
-              <li class="nav-item active submenu">
-                <a data-bs-toggle="collapse" href="#sidebarLayouts">
-                  <i class="fas fa-th-list"></i>
-                  <p>Sidebar Layouts</p>
-                  <span class="caret"></span>
-                </a>
-                <div class="collapse show" id="sidebarLayouts">
-                  <ul class="nav nav-collapse">
-                    <li class="active">
-                      <a href="sidebar-style-2.html">
-                        <span class="sub-item">Sidebar Style 2</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="icon-menu.html">
-                        <span class="sub-item">Icon Menu</span>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li class="nav-item">
-                <a data-bs-toggle="collapse" href="#forms">
-                  <i class="fas fa-pen-square"></i>
-                  <p>Forms</p>
-                  <span class="caret"></span>
-                </a>
-                <div class="collapse" id="forms">
-                  <ul class="nav nav-collapse">
-                    <li>
-                      <a href="forms/forms.html">
-                        <span class="sub-item">Basic Form</span>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li class="nav-item">
+            
+              <li class=" nav-item ">
                 <a data-bs-toggle="collapse" href="#tables">
                   <i class="fas fa-table"></i>
                   <p>Tables</p>
@@ -168,7 +132,7 @@
                   </ul>
                 </div>
               </li>
-              <li class="nav-item">
+              <li class=" nav-item ">
                 <a data-bs-toggle="collapse" href="#maps">
                   <i class="fas fa-map-marker-alt"></i>
                   <p>Maps</p>
@@ -189,42 +153,7 @@
                   </ul>
                 </div>
               </li>
-              <li class="nav-item">
-                <a data-bs-toggle="collapse" href="#charts">
-                  <i class="far fa-chart-bar"></i>
-                  <p>Charts</p>
-                  <span class="caret"></span>
-                </a>
-                <div class="collapse" id="charts">
-                  <ul class="nav nav-collapse">
-                    <li>
-                      <a href="charts/charts.html">
-                        <span class="sub-item">Chart Js</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="charts/sparkline.html">
-                        <span class="sub-item">Sparkline</span>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li class="nav-item">
-                <a href="widgets.html">
-                  <i class="fas fa-desktop"></i>
-                  <p>Widgets</p>
-                  <span class="badge badge-success">4</span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="../../documentation/index.html">
-                  <i class="fas fa-file"></i>
-                  <p>Documentation</p>
-                  <span class="badge badge-secondary">1</span>
-                </a>
-              </li>
-              <li class="nav-item">
+              <li class=" nav-item ">
                 <a data-bs-toggle="collapse" href="#submenu">
                   <i class="fas fa-bars"></i>
                   <p>Menu Levels</p>
