@@ -65,7 +65,6 @@ if (empty($_SESSION['id'])) {
                                 </div>
                                 <div class="container">
                                     <div class="card-body">
-                                        
                                         <?php
                                         // Memeriksa apakah parameter 'page' ada di URL.
                                         if (isset($_GET['page'])) {

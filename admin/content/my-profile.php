@@ -3,7 +3,7 @@ require_once 'admin/controller/koneksi.php';
 
 
 $idEdit = $_SESSION['id'];
-$queryEdit = mysqli_query($connection, "SELECT * FROM user WHERE id='$idEdit'");
+$queryEdit = mysqli_query($config, "SELECT * FROM user WHERE id='$idEdit'");
 $rowEdit = mysqli_fetch_assoc($queryEdit);
 
 if (isset($_POST['edit'])) {
@@ -25,15 +25,15 @@ if (isset($_POST['edit'])) {
             }
             $new_image_name = "profile_picture" . $idEdit . "." . $img_ext;
             move_uploaded_file($_FILES['photo']['tmp_name'], 'admin/img/profile_picture/' . $new_image_name);
-            $queryEdit = mysqli_query($connection, "UPDATE user SET username='$username', email='$email', profile_picture='$new_image_name' WHERE id='$idEdit'");
+            $queryEdit = mysqli_query($config, "UPDATE user SET username='$username', email='$email', profile_picture='$new_image_name' WHERE id='$idEdit'");
         }
     }
-    $queryEdit = mysqli_query($connection, "UPDATE user SET username='$username', email='$email' WHERE id='$idEdit'");
+    $queryEdit = mysqli_query($config, "UPDATE user SET username='$username', email='$email' WHERE id='$idEdit'");
     header("Location: ?page=my-profile&edit=success");
     die;
 }
 
-$queryLevel = mysqli_query($connection, "SELECT * FROM level");
+$queryLevel = mysqli_query($config, "SELECT * FROM level");
 ?>
 
 <div class="card shadow">

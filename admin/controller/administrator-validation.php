@@ -6,7 +6,7 @@ require_once 'admin/controller/koneksi.php';
 $validationID = $_SESSION['id'];
 
 // Melakukan query ke database untuk mendapatkan data user berdasarkan ID dari session
-$validationUserQuery = mysqli_query($config, "SELECT * FROM users WHERE id = '$validationID'");
+$validationUserQuery = mysqli_query($config, "SELECT * FROM user WHERE id = '$validationID'");
 
 // Mengambil hasil query sebagai array asosiatif (key-nya adalah nama kolom)
 $dataValidation = mysqli_fetch_assoc($validationUserQuery);

@@ -1,7 +1,6 @@
 <?php
 include 'admin/controller/administrator-validation.php';
-$queryData = mysqli_query($config, "SELECT users.id, users.name, users.email, level.level_name FROM users LEFT JOIN level ON users.id_level = level.id ORDER BY users.id_level ASC, users.updated_at DESC");
-?>
+$queryData = mysqli_query($config, "SELECT user.id, user.username, user.email, level.level_name FROM user LEFT JOIN level ON user.id_level = level.id ORDER BY user.id_level ASC, user.updated_at DESC");
 ?>
 <div class="card shadow">
     <div class="card-header">
@@ -27,7 +26,7 @@ $queryData = mysqli_query($config, "SELECT users.id, users.name, users.email, le
                 while ($rowData = mysqli_fetch_assoc($queryData)) : ?>
                     <tr>
                         <td><?= $no++ ?></td>
-                        <td><?= isset($rowData['name']) ? $rowData['name'] : '-' ?></td>
+                        <td><?= isset($rowData['username']) ? $rowData['username'] : '-' ?></td>
                           <td><?= isset($rowData['email']) ? $rowData['email'] : '-' ?></td>
                         <td>
                             <a href="?page=tambah-user&edit=<?php echo $rowData['id'] ?>">
