@@ -1,4 +1,5 @@
 <?php
+
 function tanggal_indonesia($tanggal = null) {
     $bulan = [
         1 => 'Januari', 'Februari', 'Maret', 'April',
@@ -17,16 +18,7 @@ function tanggal_indonesia($tanggal = null) {
            $bulan[(int)$dt->format('m')] . " " . $dt->format('Y');
 }
 ?>
-<!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <title>Dashboard Drive</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Bootstrap only -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body class="bg-light">
+
 
 <div class="container py-4">
 
@@ -137,6 +129,3 @@ function tanggal_indonesia($tanggal = null) {
   updateJamLokal();
   setInterval(updateJamLokal, 1000); // update setiap detik
 </script>
-
-</body>
-</html>

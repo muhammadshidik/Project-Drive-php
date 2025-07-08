@@ -41,7 +41,7 @@
                 <div class="collapse" id="dashboard">
                   <ul class="nav nav-collapse">
                     <li>
-                      <a href="../../content/dashboard.php">
+                      <a href="?page=dashboard">
                         <span class="sub-item">Dashboard</span>
                       </a>
                     </li>
@@ -68,8 +68,8 @@
                       </a>
                     </li>
                     <li>
-                      <a href="components/buttons.html">
-                        <span class="sub-item">Button</span>
+                      <a href="?page=level">
+                        <span class="sub-item">Level</span>
                       </a>
                     </li>
                     <li>

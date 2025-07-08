@@ -1,23 +1,21 @@
 <?php
 include 'admin/controller/administrator-validation.php';
-$queryData = mysqli_query($config, "SELECT users.id, users.name, users.email, level.level_name FROM users LEFT JOIN level ON users.id_level = level.id ORDER BY users.id_level ASC, users.updated_at DESC");
-?>
+$queryData = mysqli_query($config, "SELECT * FROM level ORDER BY id ASC");
 ?>
 <div class="card shadow">
     <div class="card-header">
-        <h3>Data user</h3>
+        <h3>Data Level</h3>
     </div>
     <div class="card-body">
         <?php include 'admin/controller/alert-data-crud.php' ?>
         <div align="right" class="button-action">
-            <a href="?page=tambah-user" class="btn btn-primary btn-sm"><i class='bx bx-plus bx-22px'>Tambah user</i></a>
+            <a href="?page=tambah-level" class="btn btn-primary btn-sm"><i class='bx bx-plus bx-22px'>Tambah Level</i></a>
         </div>
         <table class="table table-bordered table-striped table-hover table-responsive mt-3">
             <thead>
                 <tr>
                     <th>No</th>
-                    <th>Nama</th>
-                    <th>Email</th>
+                    <th>Level Name</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -27,16 +25,15 @@ $queryData = mysqli_query($config, "SELECT users.id, users.name, users.email, le
                 while ($rowData = mysqli_fetch_assoc($queryData)) : ?>
                     <tr>
                         <td><?= $no++ ?></td>
-                        <td><?= isset($rowData['name']) ? $rowData['name'] : '-' ?></td>
-                          <td><?= isset($rowData['email']) ? $rowData['email'] : '-' ?></td>
+                        <td><?= isset($rowData['level_name']) ? $rowData['level_name'] : '-' ?></td>
                         <td>
-                            <a href="?page=tambah-user&edit=<?php echo $rowData['id'] ?>">
+                            <a href="?page=tambah-level&edit=<?php echo $rowData['id'] ?>">
                                 <button class="btn btn-secondary btn-sm">
                                     <i class="tf-icon bx bx-edit bx-22px">Edit </i>
                                 </button>
                             </a>
                             <a onclick="return confirm ('Apakah anda yakin akan menghapus data ini?')"
-                                href="?page=tambah-user&delete=<?php echo $rowData['id'] ?>">
+                                href="?page=tambah-level&delete=<?php echo $rowData['id'] ?>">
                                 <button class="btn btn-danger btn-sm">
                                     <i class="tf-icon bx bx-trash bx-22px">Delete</i>
                                 </button>
