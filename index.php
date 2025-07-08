@@ -16,7 +16,7 @@ if (isset($_POST['login'])) {
   $password = $_POST['password'];  // Menyimpan password dari form
 
   // Melakukan query ke database untuk mencari user dengan email dan password yang sesuai
-  $queryLogin = mysqli_query($config, "SELECT * FROM user WHERE email='$email' AND password='$password'");
+  $queryLogin = mysqli_query($config, "SELECT * FROM users WHERE email='$email' AND password='$password'");
 
   // Mengecek apakah ada baris data yang ditemukan (user cocok)
   // mysqli_num_rows() berfungsi menghitung jumlah baris hasil query

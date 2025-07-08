@@ -63,25 +63,28 @@ if (empty($_SESSION['id'])) {
                                     <?php echo isset($_GET['page']) ? str_replace("-", " ",  ucfirst($_GET['page'])) : 'Home' //untuk menambahkan nama disetiap halaman
                                     ?>
                                 </div>
-                                <div class="card-body">
-                                    <?php
-                                    // Memeriksa apakah parameter 'page' ada di URL.
-                                    if (isset($_GET['page'])) {
-                                        // Memeriksa apakah file PHP dengan nama yang sesuai dengan parameter 'page'
-                                        // ada di dalam folder 'content'.
-                                        if (file_exists("admin/content/" . $_GET['page'] . ".php")) {
-                                            // Jika file ada, include file tersebut. Ini berfungsi untuk memuat konten dinamis
-                                            // berdasarkan halaman yang diminta.
-                                            include('admin/content/' . $_GET['page'] . ".php");
+                                <div class="container">
+                                    <div class="card-body">
+                                        
+                                        <?php
+                                        // Memeriksa apakah parameter 'page' ada di URL.
+                                        if (isset($_GET['page'])) {
+                                            // Memeriksa apakah file PHP dengan nama yang sesuai dengan parameter 'page'
+                                            // ada di dalam folder 'content'.
+                                            if (file_exists("admin/content/" . $_GET['page'] . ".php")) {
+                                                // Jika file ada, include file tersebut. Ini berfungsi untuk memuat konten dinamis
+                                                // berdasarkan halaman yang diminta.
+                                                include('admin/content/' . $_GET['page'] . ".php");
+                                            } else {
+                                                // Jika file tidak ditemukan, include halaman 'notfound.php'.
+                                                include "admin/content/notfound.php";
+                                            }
                                         } else {
-                                            // Jika file tidak ditemukan, include halaman 'notfound.php'.
-                                            include "admin/content/notfound.php";
+                                            // Jika parameter 'page' tidak ada di URL, secara default include halaman 'home.php'.
+                                            include 'admin/content/dashboard.php';
                                         }
-                                    } else {
-                                        // Jika parameter 'page' tidak ada di URL, secara default include halaman 'home.php'.
-                                        include 'admin/content/dashboard.php';
-                                    }
-                                    ?>
+                                        ?>
+                                    </div>
                                 </div>
                             </div>
                         </div>
