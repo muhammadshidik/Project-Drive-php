@@ -20,9 +20,9 @@ $rowNav  = mysqli_fetch_array($queryNav);
                     </button>
                   </div>
                   <input
-                    type="tex
+                    type="text"
                     id='sidebarSearch'
-                    placeholder="Search ..."
+                    placeholder="Cari.."
                     class="form-control"
                   />
                 </div>

@@ -64,44 +64,23 @@ $dataNavbar = mysqli_fetch_assoc($queryNavbar);
                                 <li <?= (isset($_GET['page']) && in_array($_GET['page'], ['level', 'add-level'])) ? 'class="active"' : '' ?>>
                                     <a href="?page=level" data-bs-toggle="tooltip" title="Kelola level"><span class="sub-item">Level</span></a>
                                 </li>
-                                <li <?= (isset($_GET['page']) && in_array($_GET['page'], ['upload', 'add-upload'])) ? 'class="active"' : '' ?>>
-                                    <a href="?page=upload" data-bs-toggle="tooltip" title="Upload file"><span class="sub-item">Upload</span></a>
-                                </li>
-                                <li <?= (isset($_GET['page']) && in_array($_GET['page'], ['pengeluaran', 'add-pengeluaran'])) ? 'class="active"' : '' ?>>
-                                    <a href="?page=pengeluaran" data-bs-toggle="tooltip" title="Data pengeluaran"><span class="sub-item">Data Pengeluaran</span></a>
+                                <li <?= (isset($_GET['page']) && in_array($_GET['page'], ['menu', 'add-menu'])) ? 'class="active"' : '' ?>>
+                                    <a href="?page=menu" data-bs-toggle="tooltip" title="Data menu"><span class="sub-item">Menu List</span></a>
                                 </li>
                             </ul>
                         </div>
                     </li>
                 <?php elseif ($dataNavbar['id_level'] == 2) : ?>
                     <li class="nav-item">
-                        <a data-bs-toggle="collapse" href="#operatorMenu" data-bs-toggle="tooltip" title="Menu operator">
-                            <i class="fas fa-th-list"></i>
-                            <p>Operator</p>
-                            <span class="caret"></span> 
-                        </a>
-                        <div class="collapse" id="operatorMenu">
-                            <ul class="nav nav-collapse">
-                                <li <?= (isset($_GET['page']) && in_array($_GET['page'], ['order', 'add-order'])) ? 'class="active"' : '' ?>>
-                                    <a href="?page=order" data-bs-toggle="tooltip" title="Kelola order"><span class="sub-item">Order</span></a>
-                                </li>
-                                <li <?= (isset($_GET['page']) && in_array($_GET['page'], ['pickup', 'add-pickup'])) ? 'class="active"' : '' ?>>
-                                    <a href="?page=pickup" data-bs-toggle="tooltip" title="Kelola pickup"><span class="sub-item">Pickup</span></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                <?php elseif ($dataNavbar['id_level'] == 3) : ?>
-                    <li class="nav-item">
                         <a data-bs-toggle="collapse" href="#pimpinanMenu" data-bs-toggle="tooltip" title="Menu pimpinan">
                             <i class="fas fa-file-contract"></i>
-                            <p>Pimpinan</p>
+                            <p>User</p>
                             <span class="caret"></span>
                         </a>
                         <div class="collapse" id="pimpinanMenu">
                             <ul class="nav nav-collapse">
-                                <li <?= (isset($_GET['page']) && in_array($_GET['page'], ['report', 'add-report'])) ? 'class="active"' : '' ?>>
-                                    <a href="?page=report" data-bs-toggle="tooltip" title="Laporan"><span class="sub-item">Report</span></a>
+                                <li <?= (isset($_GET['page']) && in_array($_GET['page'], ['dashboard'])) ? 'class="active"' : '' ?>>
+                                    <a href="?page=dashboard" data-bs-toggle="tooltip" title="Laporan"><span class="sub-item">Dashboard</span></a>
                                 </li>
                             </ul>
                         </div>
