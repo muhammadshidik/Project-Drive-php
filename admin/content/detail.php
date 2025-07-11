@@ -16,93 +16,107 @@ if (!$data) {
 }
 ?>
 
-  <title>Detail Menu - <?= htmlspecialchars($data['nama']) ?></title>
-  <style>
-    body {
-      background-color: #f8f9fa;
-    }
+<title>Detail Menu - <?= htmlspecialchars($data['nama']) ?></title>
 
+<style>
+  body {
+    background-color: #f5f7fa;
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  .detail-container {
+    max-width: 960px;
+    margin: 3rem auto;
+    background: #fff;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  }
+
+  .image-box {
+    width: 100%;
+    height: 320px;
+    overflow: hidden;
+  }
+
+  .image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .image-box img:hover {
+    transform: scale(1.05);
+  }
+
+  .detail-body {
+    padding: 2rem;
+  }
+
+  .detail-body h1 {
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+
+  .price-tag {
+    color: #16a085;
+    font-weight: 600;
+    font-size: 1.3rem;
+    margin: 1rem 0;
+  }
+
+  .desc {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+  }
+
+  .button-group {
+    margin-top: 2rem;
+    display: flex;
+    gap: 0.75rem;
+  }
+
+  .btn-custom {
+    padding: 0.6rem 1.4rem;
+    font-weight: 500;
+    border-radius: 8px;
+  }
+
+  @media (min-width: 768px) {
     .detail-container {
-      max-width: 1000px;
-      margin: 50px auto;
-      background: #ffffff;
-      border-radius: 16px;
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.05);
-      overflow: hidden;
-    }
-
-    .menu-image {
-      width: 100%;
-      height: 360px;
-      object-fit: cover;
-      object-position: center;
-      border-radius: 16px 0 0 16px;
-    }
-
-    .menu-detail {
-      padding: 2rem;
-    }
-
-    .menu-detail h1 {
-      font-weight: bold;
-      font-size: 1.75rem;
-    }
-
-    .menu-price {
-      font-size: 1.4rem;
-      font-weight: 600;
-      color: #0d6efd;
-      margin-top: 1rem;
-      margin-bottom: 1rem;
-    }
-
-    .menu-description {
-      color: #444;
-      font-size: 1rem;
-      line-height: 1.6;
-    }
-
-    .btn-group-custom {
       display: flex;
-      gap: 1rem;
-      margin-top: 2rem;
+      flex-direction: row;
     }
 
-    @media (max-width: 768px) {
-      .menu-image {
-        border-radius: 16px 16px 0 0;
-        height: 240px;
-      }
-
-      .row.flex-md-row {
-        flex-direction: column;
-      }
+    .image-box {
+      flex: 1;
+      height: auto;
     }
-  </style>
+
+    .detail-body {
+      flex: 1;
+    }
+  }
+</style>
+</head>
 
 <body>
-
-<div class="container px-3">
-  <div class="detail-container">
-    <div class="row flex-md-row">
-      <div class="col-md-6 p-0">
-        <img src="admin/content/uploads/<?= $data['gambar'] ?: 'default.png' ?>" alt="<?= $data['nama'] ?>" class="menu-image">
+  <div class="container">
+    <div class="detail-container">
+      <div class="image-box">
+        <img src="admin/content/uploads/<?= $data['gambar'] ?: 'default.png' ?>" alt="<?= htmlspecialchars($data['nama']) ?>">
       </div>
-      <div class="col-md-6">
-        <div class="menu-detail">
-          <h1><?= htmlspecialchars($data['nama']) ?></h1>
-          <div class="menu-price">Rp<?= number_format($data['harga'], 0, ',', '.') ?></div>
-          <p class="menu-description"><?= nl2br(htmlspecialchars($data['deskripsi'])) ?></p>
-
-          <div class="btn-group-custom">
-            <a href="menu.php" class="btn btn-outline-secondary">← Kembali</a>
-            <a href="beli.php?id=<?= $data['id'] ?>" class="btn btn-primary">Beli Sekarang</a>
-          </div>
+      <div class="detail-body">
+        <h1><?= htmlspecialchars($data['nama']) ?></h1>
+        <div class="price-tag">Rp<?= number_format($data['harga'], 0, ',', '.') ?></div>
+        <p class="desc"><?= nl2br(htmlspecialchars($data['deskripsi'])) ?></p>
+        <div class="button-group">
+          <a href="menu.php" class="btn btn-outline-dark btn-custom"><i class="bi bi-arrow-left"></i> Kembali</a>
+          <a href="beli.php?id=<?= $data['id'] ?>" class="btn btn-success btn-custom"><i class="bi bi-cart"></i> Beli Sekarang</a>
         </div>
       </div>
     </div>
   </div>
-</div>
-
 </body>
-

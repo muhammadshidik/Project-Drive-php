@@ -44,12 +44,11 @@ $dataNavbar = mysqli_fetch_assoc($queryNavbar);
                     </div>
                 </li>
 
-                <li class="nav-section">
-                    <span class="sidebar-mini-icon"><i class="fa fa-ellipsis-h"></i></span>
-                    <h4 class="text-section">Master Data</h4>
-                </li>
-
                 <?php if ($dataNavbar['id_level'] == 1) : ?>
+                    <li class="nav-section">
+                        <span class="sidebar-mini-icon"><i class="fa fa-ellipsis-h"></i></span>
+                        <h4 class="text-section">Master Data</h4>
+                    </li>
                     <li class="nav-item active submenu">
                         <a data-bs-toggle="collapse" href="#adminMenu" data-bs-toggle="tooltip" data-bs-placement="right" title="Admin Area">
                             <i class="fas fa-layer-group"></i>
@@ -67,24 +66,14 @@ $dataNavbar = mysqli_fetch_assoc($queryNavbar);
                                 <li <?= (isset($_GET['page']) && in_array($_GET['page'], ['menu', 'add-menu'])) ? 'class="active"' : '' ?>>
                                     <a href="?page=menu" data-bs-toggle="tooltip" title="Data menu"><span class="sub-item">Menu List</span></a>
                                 </li>
-                            </ul>
-                        </div>
-                    </li>
-                <?php elseif ($dataNavbar['id_level'] == 2) : ?>
-                    <li class="nav-item">
-                        <a data-bs-toggle="collapse" href="#pimpinanMenu" data-bs-toggle="tooltip" title="Menu pimpinan">
-                            <i class="fas fa-file-contract"></i>
-                            <p>User</p>
-                            <span class="caret"></span>
-                        </a>
-                        <div class="collapse" id="pimpinanMenu">
-                            <ul class="nav nav-collapse">
-                                <li <?= (isset($_GET['page']) && in_array($_GET['page'], ['dashboard'])) ? 'class="active"' : '' ?>>
-                                    <a href="?page=dashboard" data-bs-toggle="tooltip" title="Laporan"><span class="sub-item">Dashboard</span></a>
+                                <li <?= (isset($_GET['page']) && in_array($_GET['page'], ['banner'])) ? 'class="active"' : '' ?>>
+                                    <a href="?page=banner" data-bs-toggle="tooltip" title="Data menu"><span class="sub-item">Banner</span></a>
                                 </li>
                             </ul>
                         </div>
                     </li>
+                <?php elseif ($dataNavbar['id_level'] == 2) : ?>
+
                 <?php endif; ?>
 
                 <!-- Menu Logout -->
@@ -102,8 +91,8 @@ $dataNavbar = mysqli_fetch_assoc($queryNavbar);
 
 <!-- Script aktivasi tooltip Bootstrap -->
 <script>
-  const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-  tooltipTriggerList.map(function (tooltipTriggerEl) {
-    return new bootstrap.Tooltip(tooltipTriggerEl);
-  });
+    const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    tooltipTriggerList.map(function(tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl);
+    });
 </script>
